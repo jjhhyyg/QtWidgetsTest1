@@ -38,6 +38,13 @@ myWidget::myWidget(QWidget *parent)
     myBtn->move(200, 0);
     myBtn->setParent(this);
 
+    // 需求：点击我的按钮，关闭窗口
+    // 参数1：信号的发送者
+    // 参数2：发送的信号（函数的地址）
+    // 参数3：信号的接收者
+    // 参数4：处理的槽
+    connect(myBtn, &QPushButton::clicked, this, &QWidget::close);
+
     // ui.setupUi(this);
 }
 
