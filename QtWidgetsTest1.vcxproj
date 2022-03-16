@@ -85,6 +85,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Student.cpp" />
+    <ClCompile Include="Teacher.cpp" />
     <QtRcc Include="myWidget.qrc" />
     <QtUic Include="myWidget.ui" />
     <QtMoc Include="myWidget.h" />
@@ -94,6 +96,12 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="MyPushButton.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="Teacher.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="Student.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

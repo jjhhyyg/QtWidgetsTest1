@@ -5,6 +5,8 @@
 #include <Qpushbutton>
 #include "MyPushButton.h"
 #include <QDebug>
+#include "Teacher.h"
+#include "Student.h"
 
 class myWidget : public QWidget
 {
@@ -14,5 +16,8 @@ public:
     myWidget(QWidget *parent = Q_NULLPTR);
     ~myWidget();
 private:
-    // Ui::myWidgetClass ui;
+    Teacher* t;
+    Student* s;
+
+    void afterClass();
 };
