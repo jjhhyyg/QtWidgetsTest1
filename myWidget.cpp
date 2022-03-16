@@ -14,8 +14,11 @@ myWidget::myWidget(QWidget *parent)
     // 创建一个学生对象（同时指定父亲）
     s = new Student(this);
 
-    // 老师饿了，学生请客的连接
-    connect(t, &Teacher::hungry, s, &Student::treat);
+    // 连接带参数的信号和槽
+    // 函数指针 -> 函数地址
+    void(Teacher:: *teacherSignal)(QString) = &Teacher::hungry;
+    void(Student:: *studentSlot)(QString) = &Student::treat;
+    connect(t, teacherSignal, s, studentSlot);
 
     // 调用下课函数
     afterClass();
@@ -24,7 +27,8 @@ myWidget::myWidget(QWidget *parent)
 void myWidget::afterClass()
 {
     // 下课了，调用后，触发老师饿了的信号
-    emit t->hungry();
+    // emit t->hungry();
+    emit t->hungry(QString::fromLocal8Bit("宫保鸡丁"));
 }
 
 myWidget::~myWidget()
