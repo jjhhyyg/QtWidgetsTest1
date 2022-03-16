@@ -43,7 +43,7 @@ myWidget::myWidget(QWidget *parent)
     // 参数2：发送的信号（函数的地址）
     // 参数3：信号的接收者
     // 参数4：处理的槽
-    connect(myBtn, &QPushButton::clicked, this, &QWidget::close);
+    connect(myBtn, &MyPushButton::clicked, this, &myWidget::close);
 
     // ui.setupUi(this);
 }
