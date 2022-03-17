@@ -54,7 +54,36 @@ myWidget::myWidget(QWidget *parent)
     // 信号和槽的参数类型必须一一对应
     // 信号和槽的参数个数不一定一一对应，但槽的参数一定是信号的参数的子集
 
+    // lambda表达式
+    // []中为"="表示值传递，为"&"表示引用传递，用这两个符号时可以使用lambda表达式所在作用于范围内所有可见的局部变量，包括this
+    // []中为"this"时，函数体内可以使用lambda所在类中的成员变量
+    // [=,&a,&b]表示除a和b按引用传递外，其他参数都按值传递
+    // 在最后一对()前的内容都是函数的定义，()表示函数的引用
+    // 当以值传递时，默认该变量不可修改，若要修改需要在第一个()后加上mutable关键字，但修改的只是该变量的副本而不是其本身
+    // 返回值：默认为void，可以有一个return，要在第一个()后加上-><返回值类型>
+    // 
+    // 用途：在connect的时候，可以定义槽
+    /*int ret = [=]() ->int{
+        btn->setText("aaaa");
+        return 1000;
+    }();*/
+
+    // 利用lambda实现点击按钮，关闭窗口（无参）
+    QPushButton* btn3 = new QPushButton(QString::fromLocal8Bit("关闭窗口"), this);
+    btn3->move(0, 200);
+    this->connect(btn3, &QPushButton::clicked, this, [=]() {
+        this->close();
+        });
+
+    // 利用lambda实现点击按钮，触发请客事件（有参）
+    QPushButton* btn4 = new QPushButton(QString::fromLocal8Bit("请客吃宫保鸡丁"), this);
+    btn4->move(200, 200);
     
+    // PS: 第三个参数是this的时候可以省略不要
+    this->connect(btn4, &QPushButton::clicked, s, [=]() {
+        emit t->hungry(QString::fromLocal8Bit("宫保鸡丁"));
+        btn4->setText(QString::fromLocal8Bit("请不动了"));
+        });
 
 }
 
