@@ -18,7 +18,11 @@ myWidget::myWidget(QWidget *parent)
     // 函数指针 -> 函数地址
     void(Teacher:: *teacherSignal)(QString) = &Teacher::hungry;
     void(Student:: *studentSlot)(QString) = &Student::treat;
-    this->connect(t, teacherSignal, s, studentSlot);
+    // this->connect(t, teacherSignal, s, studentSlot);
+
+    // QT4版本及以前的信号和槽连接方式
+    // 有参
+    this->connect(t, SIGNAL(hungry(QString)), s, SLOT(treat(QString)));
 
     // 调用下课函数
     // afterClass();
@@ -26,22 +30,32 @@ myWidget::myWidget(QWidget *parent)
     // 点击一个下课的按钮，再触发下课（有参）
     QPushButton* btn = new QPushButton(QString::fromLocal8Bit("下课（有参）"),this);
     this->resize(600, 400);
-    this->connect(btn,&QPushButton::clicked,this,&myWidget::afterClass);
+    this->connect(btn, &QPushButton::clicked, this, &myWidget::afterClass);
+    
 
     // 点击一个下课的按钮，再触发下课（无参），信号触发信号
     void(Teacher:: * teacherSignal2)(void) = &Teacher::hungry;
     void(Student:: * studentSlot2)(void) = &Student::treat;
+
     this->connect(t, teacherSignal2, s, studentSlot2);
+
+    // QT4版本及以前的信号和槽连接方式
+    // 无参
+    // this->connect(t, SIGNAL(hungry()), s, SLOT(treat()));
+
     QPushButton* btn2 = new QPushButton(QString::fromLocal8Bit("下课（无参）"), this);
     btn2->move(200, 0);
     this->connect(btn2, &QPushButton::clicked, t, teacherSignal2);
 
     // 断开信号
-    this->disconnect(btn, &QPushButton::clicked, this, &myWidget::afterClass);
+    // this->disconnect(btn, &QPushButton::clicked, this, &myWidget::afterClass);
 
     // 扩展：一个信号可以连接多个槽函数，多个信号可以连接同一个槽函数
     // 信号和槽的参数类型必须一一对应
     // 信号和槽的参数个数不一定一一对应，但槽的参数一定是信号的参数的子集
+
+    
+
 }
 
 void myWidget::afterClass()
