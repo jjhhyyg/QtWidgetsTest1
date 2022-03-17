@@ -88,12 +88,8 @@
     <QtRcc Include="myWidget.qrc" />
     <QtUic Include="myWidget.ui" />
     <QtMoc Include="myWidget.h" />
-    <ClCompile Include="MyPushButton.cpp" />
     <ClCompile Include="myWidget.cpp" />
     <ClCompile Include="main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="MyPushButton.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
