@@ -23,29 +23,23 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <QtRcc Include="myWidget.qrc">
+    <QtRcc Include="..\QtUITest1\Window.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
-    <QtUic Include="myWidget.ui">
+    <QtUic Include="..\QtUITest1\Window.ui">
       <Filter>Form Files</Filter>
     </QtUic>
-    <QtMoc Include="myWidget.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <ClCompile Include="myWidget.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MyPushButton.cpp">
+    <ClCompile Include="..\QtUITest1\Window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="MyPushButton.h">
+    <QtMoc Include="..\QtUITest1\Window.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

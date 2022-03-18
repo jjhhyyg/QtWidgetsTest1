@@ -1,11 +1,11 @@
 <RCC>
     <qresource prefix="/">
-        <file>Photo/document.png</file>
         <file>Photo/editing.png</file>
         <file>Photo/folder.png</file>
-        <file>Photo/new-file.png</file>
-        <file>Photo/open.png</file>
-        <file>Photo/open-folder-with-document.png</file>
         <file>Photo/save.png</file>
+        <file>Photo/open.png</file>
+        <file>Photo/new-file.png</file>
+        <file>Photo/document.png</file>
+        <file>Photo/open-folder-with-document.png</file>
     </qresource>
 </RCC>

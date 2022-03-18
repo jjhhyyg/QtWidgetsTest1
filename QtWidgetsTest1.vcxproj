@@ -86,15 +86,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <QtRcc Include="myWidget.qrc" />
-    <QtUic Include="myWidget.ui" />
-    <QtMoc Include="myWidget.h" />
-    <ClCompile Include="MyPushButton.cpp" />
-    <ClCompile Include="myWidget.cpp" />
+    <QtRcc Include="..\QtUITest1\Window.qrc" />
+    <QtUic Include="..\QtUITest1\Window.ui" />
+    <ClCompile Include="..\QtUITest1\Window.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="MyPushButton.h" />
+    <QtMoc Include="..\QtUITest1\Window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
