@@ -5,6 +5,8 @@ VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QtWidgetsTest1", "QtWidgetsTest1.vcxproj", "{D2974001-70A2-4B73-91F6-BCEE40293DB5}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QtWindowTest1", "..\QtWindowTest1\QtWindowTest1.vcxproj", "{866D83E7-3E69-4E5B-91C5-4E12004651D8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -15,6 +17,10 @@ Global
 		{D2974001-70A2-4B73-91F6-BCEE40293DB5}.Debug|x86.Build.0 = Debug|Win32
 		{D2974001-70A2-4B73-91F6-BCEE40293DB5}.Release|x86.ActiveCfg = Release|Win32
 		{D2974001-70A2-4B73-91F6-BCEE40293DB5}.Release|x86.Build.0 = Release|Win32
+		{866D83E7-3E69-4E5B-91C5-4E12004651D8}.Debug|x86.ActiveCfg = Debug|Win32
+		{866D83E7-3E69-4E5B-91C5-4E12004651D8}.Debug|x86.Build.0 = Debug|Win32
+		{866D83E7-3E69-4E5B-91C5-4E12004651D8}.Release|x86.ActiveCfg = Release|Win32
+		{866D83E7-3E69-4E5B-91C5-4E12004651D8}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

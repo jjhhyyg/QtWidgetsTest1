@@ -2,7 +2,7 @@
 
 #include <QtWidgets/QWidget>
 #include "ui_myWidget.h"
-#include <Qpushbutton>
+#include "MyPushButton.h"
 #include <QDebug>
 
 class myWidget : public QWidget
@@ -13,5 +13,5 @@ public:
     myWidget(QWidget *parent = Q_NULLPTR);
     ~myWidget();
 private:
-    // Ui::myWidgetClass ui;
+
 };
